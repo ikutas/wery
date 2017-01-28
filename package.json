@@ -1,0 +1,46 @@
+{
+  "name": "wery",
+  "version": "0.0.0",
+  "description": "wery development.",
+  "main": "gulpfile.babel.js",
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "serve": "gulp serve",
+    "build": "gulp build",
+    "build-css": "gulp css",
+    "build-js": "gulp js",
+    "build-html": "gulp html",
+    "build-image": "gulp image"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "tatsuaki watanabe",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "6.3.*",
+    "babel-preset-es2015": "6.3.*",
+    "babelify": "7.2.*",
+    "browserify": "12.0.*",
+    "chai": "3.5.*",
+    "gulp": "git://github.com/gulpjs/gulp.git#4.0",
+    "gulp-html-validator": "0.0.5",
+    "gulp-instant-mocha": "^1.0.4",
+    "gulp-pleeease": "2.0.*",
+    "gulp-sass": "2.1.*",
+    "gulp-sass-glob": "^1.0.6",
+    "gulp-watch": "^4.3.8",
+    "jquery": "2.*",
+    "read-config": "2.0.*",
+    "reset.css": "^2.0.2",
+    "vinyl-source-stream": "1.1.*"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
+}
