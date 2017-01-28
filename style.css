@@ -8,12 +8,305 @@ Author URI: http://mama-hack.com/
 License:
 License URI:
 ******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Sass Functions
+
+You can do a lot of really cool things in Sass. Functions help you
+make repeated actions a lot easier. They are really similar to mixins,
+but can be used for so much more.
+
+Anyway, keep them all in here so it's easier to find when you're
+looking for one.
+
+For more info on functions, go here:
+http://sass-lang.com/documentation/Sass/Script/Functions.html
+
+******************************************************************/
 /*********************
-IMPORTING PARTIALS
-These files are needed at the beginning so that we establish all
-our mixins, functions, and variables that we'll be using across
-the whole project.
+COLOR FUNCTIONS
+These are helpful when you're working
+with shadows and such things. It's essentially
+a quicker way to write RGBA.
+
+Example:
+box-shadow: 0 0 4px black(0.3);
+compiles to:
+box-shadow: 0 0 4px rgba(0,0,0,0.3);
 *********************/
+/*********************
+RESPONSIVE HELPER FUNCTION
+If you're creating a responsive site, then
+you've probably already read
+Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
+
+Here's a nice little helper function for calculating
+target / context
+as mentioned in that book.
+
+Example:
+width: cp(650px, 1000px);
+or
+width: calc-percent(650px, 1000px);
+both compile to:
+width: 65%;
+*********************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+https://github.com/dope/lemonade - Neat lightweight grid.
+
+
+The grid below is a custom built thingy I modeled a bit after
+Gridset. It's VERY basic and probably shouldn't be used on
+your client projects. The idea is you learn how to roll your
+own grids. It's better in the long run and allows you full control
+over your project's layout.
+
+******************************************************************/
+.last-col {
+  float: right;
+  padding-right: 0 !important; }
+
+/*
+Mobile Grid Styles
+These are the widths for the mobile grid.
+There are four types, but you can add or customize
+them however you see fit.
+*/
+@media (max-width: 767px) {
+  .m-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0; }
+  .m-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%; }
+  .m-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%; }
+  .m-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%; }
+  .m-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%; }
+  .m-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%; } }
+
+/* Portrait tablet to landscape */
+@media (min-width: 768px) and (max-width: 1029px) {
+  .t-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0; }
+  .t-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%; }
+  .t-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%; }
+  .t-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%; }
+  .t-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%; }
+  .t-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%; }
+  .t-1of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 20%; }
+  .t-2of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 40%; }
+  .t-3of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 60%; }
+  .t-4of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 80%; } }
+
+/* Landscape to small desktop */
+@media (min-width: 1030px) {
+  .d-all {
+    float: left;
+    padding-right: 0.75em;
+    width: 100%;
+    padding-right: 0; }
+  .d-1of2 {
+    float: left;
+    padding-right: 0.75em;
+    width: 50%; }
+  .d-1of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 33.33%; }
+  .d-2of3 {
+    float: left;
+    padding-right: 0.75em;
+    width: 66.66%; }
+  .d-1of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 25%; }
+  .d-3of4 {
+    float: left;
+    padding-right: 0.75em;
+    width: 75%; }
+  .d-1of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 20%; }
+  .d-2of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 40%; }
+  .d-3of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 60%; }
+  .d-4of5 {
+    float: left;
+    padding-right: 0.75em;
+    width: 80%; }
+  .d-1of6 {
+    float: left;
+    padding-right: 0.75em;
+    width: 16.6666666667%; }
+  .d-1of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 14.2857142857%; }
+  .d-2of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 28.5714286%; }
+  .d-3of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 42.8571429%; }
+  .d-4of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 57.1428572%; }
+  .d-5of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 71.4285715%; }
+  .d-6of7 {
+    float: left;
+    padding-right: 0.75em;
+    width: 85.7142857%; }
+  .d-1of8 {
+    float: left;
+    padding-right: 0.75em;
+    width: 12.5%; }
+  .d-1of9 {
+    float: left;
+    padding-right: 0.75em;
+    width: 11.1111111111%; }
+  .d-1of10 {
+    float: left;
+    padding-right: 0.75em;
+    width: 10%; }
+  .d-1of11 {
+    float: left;
+    padding-right: 0.75em;
+    width: 9.09090909091%; }
+  .d-1of12 {
+    float: left;
+    padding-right: 0.75em;
+    width: 8.33%; } }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Grid Styles
+
+Since the example grid is based on media queries, so rather than
+setup some js library that would make IE8 and below understand
+media queries, let's just add some styles that serves a fixed grid.
+
+Again, if you want to roll your own, just remove this junk and put
+whatever you use in here.
+
+******************************************************************/
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+This is where you can take advantage of Sass' great features: Mixins.
+I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+Helpful:
+http://sachagreif.com/useful-sass-mixins/
+http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
+http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
+
+******************************************************************/
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
 /* normalize.css 2012-07-07T09:50 UTC - http://github.com/necolas/normalize.css */
 /* ==========================================================================
    HTML5 display definitions
@@ -431,28 +724,6 @@ span.amp {
 Site Name:
 Author:
 
-Stylesheet: Variables
-
-Here is where we declare all our variables like colors, fonts,
-base values, and defaults. We want to make sure this file ONLY
-contains variables that way our files don't get all messy.
-No one likes a mess.
-
-******************************************************************/
-/*********************
-COLORS
-Need help w/ choosing your colors? Try this site out:
-http://0to255.com/
-*********************/
-/*
-Here's a great tutorial on how to
-use color variables properly:
-http://sachagreif.com/sass-color-variables/
-*/
-/******************************************************************
-Site Name:
-Author:
-
 Stylesheet: Typography
 
 Need to import a font or set of icons for your site? Drop them in
@@ -520,294 +791,24 @@ p {
 Site Name:
 Author:
 
-Stylesheet: Sass Functions
+Stylesheet: Variables
 
-You can do a lot of really cool things in Sass. Functions help you
-make repeated actions a lot easier. They are really similar to mixins,
-but can be used for so much more.
-
-Anyway, keep them all in here so it's easier to find when you're
-looking for one.
-
-For more info on functions, go here:
-http://sass-lang.com/documentation/Sass/Script/Functions.html
+Here is where we declare all our variables like colors, fonts,
+base values, and defaults. We want to make sure this file ONLY
+contains variables that way our files don't get all messy.
+No one likes a mess.
 
 ******************************************************************/
 /*********************
-COLOR FUNCTIONS
-These are helpful when you're working
-with shadows and such things. It's essentially
-a quicker way to write RGBA.
-
-Example:
-box-shadow: 0 0 4px black(0.3);
-compiles to:
-box-shadow: 0 0 4px rgba(0,0,0,0.3);
-*********************/
-/*********************
-RESPONSIVE HELPER FUNCTION
-If you're creating a responsive site, then
-you've probably already read
-Responsive Web Design: http://www.abookapart.com/products/responsive-web-design
-
-Here's a nice little helper function for calculating
-target / context
-as mentioned in that book.
-
-Example:
-width: cp(650px, 1000px);
-or
-width: calc-percent(650px, 1000px);
-both compile to:
-width: 65%;
-*********************/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Mixins Stylesheet
-
-This is where you can take advantage of Sass' great features: Mixins.
-I won't go in-depth on how they work exactly,
-there are a few articles below that will help do that. What I will
-tell you is that this will help speed up simple changes like
-changing a color or adding CSS3 techniques gradients.
-
-A WORD OF WARNING: It's very easy to overdo it here. Be careful and
-remember less is more.
-
-Helpful:
-http://sachagreif.com/useful-sass-mixins/
-http://thesassway.com/intermediate/leveraging-sass-mixins-for-cleaner-code
-http://web-design-weekly.com/blog/2013/05/12/handy-sass-mixins/
-
-******************************************************************/
-/*********************
-TRANSITION
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
 *********************/
 /*
-I totally rewrote this to be cleaner and easier to use.
-You'll need to be using Sass 3.2+ for these to work.
-Thanks to @anthonyshort for the inspiration on these.
-USAGE: @include transition(all 0.2s ease-in-out);
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
 */
-/*********************
-CSS3 GRADIENTS
-Be careful with these since they can
-really slow down your CSS. Don't overdo it.
-*********************/
-/* @include css-gradient(#dfdfdf,#f8f8f8); */
-/*********************
-BOX SIZING
-*********************/
-/* @include box-sizing(border-box); */
-/* NOTE: value of "padding-box" is only supported in Gecko. So
-probably best not to use it. I mean, were you going to anyway? */
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Grid Stylesheet
-
-I've seperated the grid so you can swap it out easily. It's
-called at the top the style.scss stylesheet.
-
-There are a ton of grid solutions out there. You should definitely
-experiment with your own. Here are some recommendations:
-
-http://gridsetapp.com - Love this site. Responsive Grids made easy.
-http://susy.oddbird.net/ - Grids using Compass. Very elegant.
-http://gridpak.com/ - Create your own responsive grid.
-https://github.com/dope/lemonade - Neat lightweight grid.
-
-
-The grid below is a custom built thingy I modeled a bit after
-Gridset. It's VERY basic and probably shouldn't be used on
-your client projects. The idea is you learn how to roll your
-own grids. It's better in the long run and allows you full control
-over your project's layout.
-
-******************************************************************/
-.last-col {
-  float: right;
-  padding-right: 0 !important; }
-
-/*
-Mobile Grid Styles
-These are the widths for the mobile grid.
-There are four types, but you can add or customize
-them however you see fit.
-*/
-@media (max-width: 767px) {
-  .m-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .m-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .m-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .m-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .m-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .m-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; } }
-
-/* Portrait tablet to landscape */
-@media (min-width: 768px) and (max-width: 1029px) {
-  .t-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .t-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .t-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .t-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .t-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .t-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; }
-  .t-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%; }
-  .t-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%; }
-  .t-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%; }
-  .t-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%; } }
-
-/* Landscape to small desktop */
-@media (min-width: 1030px) {
-  .d-all {
-    float: left;
-    padding-right: 0.75em;
-    width: 100%;
-    padding-right: 0; }
-  .d-1of2 {
-    float: left;
-    padding-right: 0.75em;
-    width: 50%; }
-  .d-1of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 33.33%; }
-  .d-2of3 {
-    float: left;
-    padding-right: 0.75em;
-    width: 66.66%; }
-  .d-1of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 25%; }
-  .d-3of4 {
-    float: left;
-    padding-right: 0.75em;
-    width: 75%; }
-  .d-1of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 20%; }
-  .d-2of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 40%; }
-  .d-3of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 60%; }
-  .d-4of5 {
-    float: left;
-    padding-right: 0.75em;
-    width: 80%; }
-  .d-1of6 {
-    float: left;
-    padding-right: 0.75em;
-    width: 16.6666666667%; }
-  .d-1of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 14.2857142857%; }
-  .d-2of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 28.5714286%; }
-  .d-3of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 42.8571429%; }
-  .d-4of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 57.1428572%; }
-  .d-5of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 71.4285715%; }
-  .d-6of7 {
-    float: left;
-    padding-right: 0.75em;
-    width: 85.7142857%; }
-  .d-1of8 {
-    float: left;
-    padding-right: 0.75em;
-    width: 12.5%; }
-  .d-1of9 {
-    float: left;
-    padding-right: 0.75em;
-    width: 11.1111111111%; }
-  .d-1of10 {
-    float: left;
-    padding-right: 0.75em;
-    width: 10%; }
-  .d-1of11 {
-    float: left;
-    padding-right: 0.75em;
-    width: 9.09090909091%; }
-  .d-1of12 {
-    float: left;
-    padding-right: 0.75em;
-    width: 8.33%; } }
-
-/*********************
-IMPORTING MODULES
-Modules are reusable blocks or elements we use throughout the project.
-We can break them up as much as we want or just keep them all in one.
-I mean, you can do whatever you want. The world is your oyster. Unless
-you hate oysters, then the world is your peanut butter & jelly sandwich.
-*********************/
 /******************************************************************
 Site Name:
 Author:
@@ -1187,24 +1188,6 @@ select {
   background-position: 97.5% center; }
 
 /*********************
-BASE (MOBILE) SIZE
-This are the mobile styles. It's what people see on their phones. If
-you set a great foundation, you won't need to add too many styles in
-the other stylesheets. Remember, keep it light: Speed is Important.
-*********************/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
-/*********************
 GENERAL STYLES
 *********************/
 body {
@@ -1265,14 +1248,18 @@ LAYOUT & GRID STYLES
 /*********************
 LINK STYLES
 *********************/
-a, a:visited {
+a,
+a:visited {
   color: #f01d4f;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
-  a:hover, a:focus, a:visited:hover, a:visited:focus {
+  a:focus, a:hover,
+  a:visited:focus,
+  a:visited:hover {
     color: #d10e3c; }
-  a:link, a:visited:link {
+  a:link,
+  a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
 		so it basically works like the :hover selector
@@ -1283,7 +1270,16 @@ a, a:visited {
 /******************************************************************
 H1, H2, H3, H4, H5 STYLES
 ******************************************************************/
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+h1,
+h2,
+h3,
+h4,
+h5 {
   text-rendering: optimizelegibility;
   font-weight: 500;
   /*
@@ -1291,26 +1287,40 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 	http://css-tricks.com/watch-your-font-weight/
 	*/
   /* removing text decoration from all headline links */ }
-  h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a {
+  .h1 a,
+  .h2 a,
+  .h3 a,
+  .h4 a,
+  .h5 a,
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a {
     text-decoration: none; }
 
-h1, .h1 {
+.h1,
+h1 {
   font-size: 2.5em;
   line-height: 1.333em; }
 
-h2, .h2 {
+.h2,
+h2 {
   font-size: 1.75em;
   line-height: 1.4em;
   margin-bottom: 0.375em; }
 
-h3, .h3 {
+.h3,
+h3 {
   font-size: 1.125em; }
 
-h4, .h4 {
+.h4,
+h4 {
   font-size: 1.1em;
   font-weight: 700; }
 
-h5, .h5 {
+.h5,
+h5 {
   font-size: 0.846em;
   line-height: 2.09em;
   text-transform: uppercase;
@@ -1320,12 +1330,13 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #323944; }
+  background-color: #fff;
+  color: #000; }
 
 #logo {
   margin: 0.75em 0; }
   #logo a {
-    color: #fff; }
+    color: #000; }
 
 /*********************
 NAVIGATION STYLES
@@ -1362,8 +1373,8 @@ and more scalable.
 			the style.scss file where it's relevant. We want to
 			keep this file as small as possible!
 			*/ }
-    .nav li ul.sub-menu li a,
-    .nav li ul.children li a {
+    .nav li ul.children li a,
+    .nav li ul.sub-menu li a {
       padding-left: 30px; }
 
 /* end .nav */
@@ -1377,7 +1388,7 @@ POSTS & CONTENT STYLES
   background-color: #fff;
   border-radius: 3px;
   margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
+  border: 1px solid #000; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
@@ -1388,9 +1399,9 @@ POSTS & CONTENT STYLES
       margin: 0; }
 
 /* end .hentry */
-.single-title,
+.entry-title,
 .page-title,
-.entry-title {
+.single-title {
   margin: 0; }
 
 /* want to style individual post classes? Booya! */
@@ -1456,7 +1467,7 @@ POSTS & CONTENT STYLES
     color: #787878;
     margin-bottom: 1.5em; }
   .entry-content img {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 1.5em;
     max-width: 100%;
     height: auto; }
   .entry-content .size-auto,
@@ -1467,7 +1478,7 @@ POSTS & CONTENT STYLES
     max-width: 100%;
     height: auto; }
   .entry-content pre {
-    background: #323944;
+    background: #000;
     color: #f8f9fa;
     font-size: 0.9em;
     padding: 1.5em;
@@ -1519,7 +1530,8 @@ PAGE NAVI STYLES
     display: inline;
     overflow: hidden;
     border-right: 1px solid #eaedf2; }
-  .pagination a, .pagination span {
+  .pagination a,
+  .pagination span {
     margin: 0;
     text-decoration: none;
     padding: 0;
@@ -1530,13 +1542,15 @@ PAGE NAVI STYLES
     min-width: 1em;
     display: block;
     color: #2980b9; }
-    .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
+    .pagination a:focus, .pagination a:hover,
+    .pagination span:focus,
+    .pagination span:hover {
       background-color: #2980b9;
       color: #fff; }
   .pagination .current {
     cursor: default;
     color: #5c6b80; }
-    .pagination .current:hover, .pagination .current:focus {
+    .pagination .current:focus, .pagination .current:hover {
       background-color: #fff;
       color: #5c6b80; }
 
@@ -1689,7 +1703,7 @@ SIDEBARS & ASIDES
   background-color: #fff;
   padding: 1.5em;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #000;
   border-radius: 2px;
   margin-bottom: 1.5em; }
 
@@ -1698,7 +1712,7 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #323944;
+  background-color: #000;
   color: #f8f9fa; }
 
 /*
@@ -1711,12 +1725,6 @@ FOOTER STYLES
 	view.
 	*/
 /* end .footer-links */
-/*********************
-LARGER MOBILE DEVICES
-This is for devices like the Galaxy Note or something that's
-larger than an iPhone but smaller than a tablet. Let's call them
-tweeners.
-*********************/
 @media only screen and (min-width: 481px) {
   /******************************************************************
 Site Name:
@@ -1789,12 +1797,6 @@ do they need tweaking?
 */
   /* end .footer-links */ }
 
-/*********************
-TABLET & SMALLER LAPTOPS
-This is the average viewing window. So Desktops, Laptops, and
-in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
-*********************/
 @media only screen and (min-width: 768px) {
   /******************************************************************
 Site Name:
@@ -1829,7 +1831,7 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     .nav ul {
-      background: #323944;
+      background: #000;
       margin-top: 0; }
     .nav li {
       float: left;
@@ -1925,12 +1927,6 @@ mobile. Make sure to double check these!
 			*/ }
   /* end .footer-links */ }
 
-/*********************
-DESKTOP
-This is the average viewing window. So Desktops, Laptops, and
-in general anyone not viewing on a mobile device. Here's where
-you can add resource intensive styles.
-*********************/
 @media only screen and (min-width: 1030px) {
   /******************************************************************
 Site Name:
@@ -1945,10 +1941,6 @@ be seen on the Desktop.
   .wrap {
     width: 1040px; } }
 
-/*********************
-LARGE VIEWING SIZE
-This is for the larger monitors and possibly full screen viewers.
-*********************/
 @media only screen and (min-width: 1240px) {
   /******************************************************************
 Site Name: 
@@ -1961,12 +1953,6 @@ on larger screens.
 
 ******************************************************************/ }
 
-/*********************
-RETINA (2x RESOLUTION DEVICES)
-This applies to the retina iPhone (4s) and iPad (2,3) along with
-other displays with a 2x resolution. You can also create a media
-query for retina AND a certain size if you want. Go Nuts.
-*********************/
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
   /******************************************************************
 Site Name: 
@@ -2009,24 +1995,7 @@ the original dimensions and you are good to go.
 
 */ }
 
-/*********************
-PRINT STYLESHEET
-Feel free to customize this. Remember to add things that won't make
-sense to print at the bottom. Things like nav, ads, and forms should
-be set to display none.
-*********************/
 @media print {
-  /******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Print Stylesheet
-
-This is the print stylesheet. There's probably not a lot
-of reasons to edit this stylesheet. If you want to
-though, go for it.
-
-******************************************************************/
   * {
     background: transparent !important;
     color: black !important;
@@ -2034,37 +2003,41 @@ though, go for it.
     -webkit-filter: none !important;
             filter: none !important;
     -ms-filter: none !important; }
-  a, a:visited {
+  a,
+  a:visited {
     color: #444 !important;
     text-decoration: underline; }
-    a:after, a:visited:after {
-      content: " (" attr(href) ")"; }
-    a abbr[title]:after, a:visited abbr[title]:after {
+    a abbr[title]:after,
+    a:visited abbr[title]:after {
       content: " (" attr(title) ")"; }
   .ir a:after,
-  a[href^="javascript:"]:after,
-  a[href^="#"]:after {
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
     content: ""; }
-  pre, blockquote {
+  blockquote,
+  pre {
     border: 1px solid #999;
     page-break-inside: avoid; }
   thead {
     display: table-header-group; }
-  tr, img {
+  img,
+  tr {
     page-break-inside: avoid; }
   img {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-  p, h2, h3 {
+  h2,
+  h3,
+  p {
     orphans: 3;
     widows: 3; }
   h2,
   h3 {
     page-break-after: avoid; }
-  .sidebar,
   .page-navigation,
-  .wp-prev-next,
   .respond-form,
+  .sidebar,
+  .wp-prev-next,
   nav {
     display: none; } }
