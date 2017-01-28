@@ -1,3 +1,7 @@
+<?php
+//TODO: indexと同じにする
+?>
+
 <?php get_header(); ?>
 
 			<div id="content">

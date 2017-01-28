@@ -1,0 +1,18 @@
+.index__main {}
+
+.index__main__post {
+  width: 100%;
+}
+
+.index__main__post__thumb {
+  display: block;
+  @include notxt;
+}
+
+.index__main__post__title {}
+
+.index__main__post__date {}
+
+.index__main__post__category {}
+
+.index__main__post__tagBox {}
